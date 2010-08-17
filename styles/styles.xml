@@ -1054,8 +1054,15 @@
       <style:header-style/>
       <style:footer-style/>
     </style:page-layout>
+    <style:page-layout style:name="A4">
+      <style:page-layout-properties fo:page-width="21cm" fo:page-height="29.7cm" style:num-format="1" style:print-orientation="portrait" fo:margin-top="2cm" fo:margin-bottom="2cm" fo:margin-left="2cm" fo:margin-right="2cm" style:writing-mode="lr-tb" style:footnote-max-height="0in">
+        <style:footnote-sep style:width="0.0071in" style:distance-before-sep="0.0398in" style:distance-after-sep="0.0398in" style:adjustment="left" style:rel-width="25%" style:color="#000000"/>
+      </style:page-layout-properties>
+      <style:header-style/>
+      <style:footer-style/>
+    </style:page-layout>
   </office:automatic-styles>
   <office:master-styles>
-    <style:master-page style:name="Standard" style:page-layout-name="Mpm1"/>
+    <style:master-page style:name="Standard" style:page-layout-name="A4"/>
   </office:master-styles>
 </office:document-styles>
