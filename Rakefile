@@ -1,25 +1,29 @@
 # -*- mode: ruby -*-
 
-STYLES='styles'
+require 'rake/clean'
 
-desc "clean up"
-task :clean do
-  system( "find . -name '*~' -o -name '.DS_Store' | xargs rm" )
+STYLES      = 'styles'
+STYLE_FILES = FileList["#{STYLES}/*"]
+STYLES_OBJ  = "#{STYLES}.odt"
+OBJ         = 'sample.odt'
+SRC         = 'sample.rst'
+
+CLEAN.include( FileList['**/*~', '**/.DS_Store', '**/*.bak'] )
+CLOBBER.include( STYLES_OBJ, OBJ )
+
+desc "compile style files into #{STYLES_OBJ}"
+file "#{STYLES_OBJ}" => STYLE_FILES do
+  sh "cd #{STYLES}; zip -r ../#{STYLES_OBJ} *"
 end
 
-desc "compile style files into styles.odt"
-task :compile => :clean do
-  system( "cd #{STYLES}; zip -r ../styles.odt *" )
+desc "convert #{SRC} to #{OBJ}"
+file "#{OBJ}" => "#{STYLES_OBJ}" do
+  sh "rst2odt.py --no-sections #{SRC} #{OBJ}"
 end
 
-desc "convert reST to .odt"
-task :convert => :compile do
-  system( 'rst2odt.py --no-sections sample.rst sample.odt' )
-end
-
-desc "open converted .odt file"
-task :open => :convert do
-  system( 'open sample.odt' )
+desc "open converted #{OBJ} file"
+task :open => "#{OBJ}" do
+  sh "open #{OBJ}"
 end
 
 task :default do
