@@ -24,7 +24,7 @@ task :convert => OBJ do
 end
 
 file OBJ => STYLES_OBJ do
-  sh "rst2odt.py --no-sections --stylesheet=#{STYLES_OBJ} #{SRC} #{OBJ}"
+  sh "rst2odt.py --no-sections --table-border-thickness=17 --stylesheet=#{STYLES_OBJ} #{SRC} #{OBJ}"
 end
 
 desc "open converted #{OBJ} file"
