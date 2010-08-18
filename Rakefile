@@ -3,7 +3,7 @@
 require 'rake/clean'
 
 STYLES      = 'styles'
-STYLE_FILES = FileList["#{STYLES}/*"]
+STYLE_FILES = FileList["#{STYLES}/*", 'sample.rst']
 STYLES_OBJ  = "#{STYLES}.odt"
 OBJ         = 'sample.odt'
 SRC         = 'sample.rst'
