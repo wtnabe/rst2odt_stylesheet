@@ -43,6 +43,7 @@
     </style:style>
     <style:style style:name="Heading_20_2" style:display-name="Heading 2" style:family="paragraph" style:parent-style-name="Heading" style:next-style-name="Text_20_body" style:class="text" style:default-outline-level="2">
       <style:text-properties fo:font-size="11pt" fo:font-weight="bold" style:font-size-asian="11pt" style:font-weight-asian="bold" style:font-size-complex="11pt" style:font-weight-complex="bold"/>
+      <style:paragraph-properties fo:margin-left="11pt"/>
     </style:style>
     <style:style style:name="Heading_20_3" style:display-name="Heading 3" style:family="paragraph" style:parent-style-name="Heading" style:next-style-name="Text_20_body" style:class="text" style:default-outline-level="3">
       <style:text-properties fo:font-size="10.5pt" fo:font-weight="bold" style:font-size-asian="10.5pt" style:font-weight-asian="bold" style:font-size-complex="10.5pt" style:font-weight-complex="bold"/>
